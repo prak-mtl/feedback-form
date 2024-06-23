@@ -55,7 +55,7 @@ const feedbackFormSlice = createSlice({
         }
       ];
     },
-    deleteSteps: (state, action) => {
+    deleteStep: (state, action) => {
       state.currentStep = 1;
       state.steps = state.steps.filter(step => step.number !== action.payload);
       delete state.formData[action.payload];
@@ -63,6 +63,6 @@ const feedbackFormSlice = createSlice({
   },
 });
 
-export const { setCurrentStep, updateFormData, addSteps, deleteSteps } = feedbackFormSlice.actions;
+export const { setCurrentStep, updateFormData, addSteps, deleteStep } = feedbackFormSlice.actions;
 
 export default feedbackFormSlice.reducer;

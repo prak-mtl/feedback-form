@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ClipboardDocumentListIcon, BeakerIcon, ArrowLeftEndOnRectangleIcon, ArrowRightEndOnRectangleIcon, DocumentPlusIcon, TrashIcon } from '@heroicons/react/24/solid';
 
-import { setCurrentStep, deleteSteps } from "@/redux/slices/feedbackForm";
+import { setCurrentStep, deleteStep } from "@/redux/slices/feedbackForm";
 
 const SidebarContext = createContext();
 
@@ -83,8 +83,9 @@ export function SidebarItem({ index, icon, text, active, showDeleteIcon }) {
 		dispatch(setCurrentStep(step));
 	}
 
-	const handleDeleteStep = (index) => {
-		dispatch(deleteSteps(index));
+	const handleDeleteStepClick = (e, index) => {
+		e.stopPropagation();
+		dispatch(deleteStep(index));
 	}
 
 	return (
@@ -107,7 +108,7 @@ export function SidebarItem({ index, icon, text, active, showDeleteIcon }) {
 			</span>
 
 			{showDeleteIcon && (
-				<TrashIcon className="size-6 text-blue-500" onClick={() => handleDeleteStep(index)} />
+				<TrashIcon className="size-6 text-blue-500" onClick={(e) => handleDeleteStepClick(e, index)} />
 			)}
 
 			{!expanded && (
