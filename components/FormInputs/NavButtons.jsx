@@ -14,7 +14,7 @@ export default function NavButtons() {
   }
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between max-lg:items-start items-center max-lg:flex-col flex-row">
       {currentStep > 1 && (
         <button
           onClick={handlePrevious}
@@ -28,7 +28,7 @@ export default function NavButtons() {
 
       <button
         type="submit"
-        className="inline-flex items-center px-5 py-2 mt-10 text-sm font-medium text-center text-white bg-slate-900 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-700"
+        className="inline-flex items-center px-5 py-2 md:mt-10 mt-4 text-sm font-medium text-center text-white bg-slate-900 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-700"
       >
         <span>
           {currentStep === steps.length ? "Confirm and Submit" : "Save and Continue"}

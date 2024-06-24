@@ -27,7 +27,7 @@ export default function Sidebar({ children }) {
 	}
 
 	return (
-		<aside className={`h-screen ${expanded ? 'w-6/12' : 'w-min'} z-10`}>
+		<aside className={`h-screen ${expanded ? 'w-max' : 'w-min'} z-10`}>
 			<nav className="h-full inline-flex flex-col bg-white border-r shadow-sm">
 				<div className="p-4 pb-2 flex justify-between items-center">
 					{expanded ?

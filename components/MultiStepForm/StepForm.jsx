@@ -20,5 +20,5 @@ export default function StepForm() {
     else return <CustomForm />;
   }
 
-  return <div className={`h-screen md:${expanded ? 'w-6/12' : 'w-full'}`}>{renderFormByStep(currentStep)}</div>;
+  return <div className={`h-screen max-md:${expanded ? 'w-6/12' : 'w-full'}`}>{renderFormByStep(currentStep)}</div>;
 }
