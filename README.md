@@ -13,4 +13,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployed on Github pages
 
-Link: [https://prak-mtl.github.io/feedback-form/]https://prak-mtl.github.io/feedback-form/
+Link: https://prak-mtl.github.io/feedback-form/
