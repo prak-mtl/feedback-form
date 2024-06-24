@@ -2,7 +2,7 @@
 
 import { useSelector } from "react-redux";
 
-import Sidebar, { SidebarItem } from "@/components/Sidebar";
+import Sidebar, { SidebarItem } from "../Sidebar";
 
 export default function Steps({ steps }) {
   const currentStep = useSelector((store) => store.feedbackForm.currentStep);

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import NavButtons from "@/components/FormInputs/NavButtons";
+import NavButtons from "../../FormInputs/NavButtons";
 
 export default function FormConfirmation() {
   const formData = useSelector((store) => store.feedbackForm.formData);
@@ -10,7 +10,7 @@ export default function FormConfirmation() {
   }
 
   return (
-    <div>
+    <div data-testid="form-confirmation">
       <form className="px-12 py-4" onSubmit={processData}>
         <div className="mb-8">
           <h5 className="text-xl md:text-3xl font-bold text-white">

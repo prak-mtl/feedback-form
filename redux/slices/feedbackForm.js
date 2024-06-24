@@ -1,5 +1,3 @@
-// Create a slice
-
 const { createSlice } = require("@reduxjs/toolkit");
 
 const initialState = {
@@ -35,7 +33,7 @@ const initialState = {
 };
 
 const feedbackFormSlice = createSlice({
-  name: "onboarding",
+  name: "feedbackForm",
   initialState,
   reducers: {
     setCurrentStep: (state, action) => {

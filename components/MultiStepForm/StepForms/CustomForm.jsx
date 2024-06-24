@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { FaceFrownIcon, MinusCircleIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 
-import NavButtons from "@/components/FormInputs/NavButtons";
-import RadioButton from "@/components/FormInputs/RadioButton";
+import NavButtons from "../../FormInputs/NavButtons";
+import RadioButton from "../../FormInputs/RadioButton";
 
-import { setCurrentStep, updateFormData } from "@/redux/slices/feedbackForm";
+import { setCurrentStep, updateFormData } from "../../../redux/slices/feedbackForm";
 
 export default function CustomForm() {
 	const currentStep = useSelector((store) => store.feedbackForm.currentStep);
@@ -29,7 +29,7 @@ export default function CustomForm() {
 
 	// Setting the step value of current mood in local state if available
 	useEffect(() => {
-		setChosenValue(formData[currentStep]?.mood || "");
+		setChosenValue(formData?.[currentStep]?.mood || "");
 
 		return () => {
 			setChosenValue("")
@@ -76,7 +76,7 @@ export default function CustomForm() {
 	], [chosenValue]);
 
 	return (
-		<form className="md:px-12 px-4 py-4" onSubmit={handleSubmit(processData)}>
+		<form className="md:px-12 px-4 py-4" onSubmit={handleSubmit(processData)} data-testid="custom-form">
 			<div className="md:mb-8 mb-4">
 				<h5 className="lg:text-3xl text-lg font-bold text-white">
 					Mood info

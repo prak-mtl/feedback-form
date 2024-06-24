@@ -1,11 +1,11 @@
 "use client";
 
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ClipboardDocumentListIcon, BeakerIcon, ArrowLeftEndOnRectangleIcon, ArrowRightEndOnRectangleIcon, DocumentPlusIcon, TrashIcon } from '@heroicons/react/24/solid';
 
-import { setCurrentStep, deleteStep, toggleExpanded } from "@/redux/slices/feedbackForm";
+import { setCurrentStep, deleteStep, toggleExpanded } from "../redux/slices/feedbackForm";
 
 const SidebarContext = createContext();
 
@@ -112,7 +112,7 @@ export function SidebarItem({ index, icon, text, active, showDeleteIcon }) {
 			</span>
 
 			{showDeleteIcon && (
-				<TrashIcon className="size-6 text-blue-500" onClick={(e) => handleDeleteStepClick(e, index)} />
+				<TrashIcon className="size-6 text-blue-500" onClick={(e) => handleDeleteStepClick(e, index)} data-testid="delete-icon" />
 			)}
 
 			{!expanded && (

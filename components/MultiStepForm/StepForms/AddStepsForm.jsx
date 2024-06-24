@@ -3,10 +3,10 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
-import TextInput from "@/components/FormInputs/TextInput";
-import NavButtons from "@/components/FormInputs/NavButtons";
+import TextInput from "../../FormInputs/TextInput";
+import NavButtons from "../../FormInputs/NavButtons";
 
-import { setCurrentStep, addSteps } from "@/redux/slices/feedbackForm";
+import { setCurrentStep, addSteps } from "../../../redux/slices/feedbackForm";
 
 export default function AddStepsForm() {
 	const formData = useSelector((store) => store.feedbackForm.formData);
@@ -31,7 +31,7 @@ export default function AddStepsForm() {
 	}
 
 	return (
-		<form className="px-12 py-4" onSubmit={handleSubmit(processData)}>
+		<form className="px-12 py-4" onSubmit={handleSubmit(processData)} data-testid="add-steps-form">
 			<div className="mb-8">
 				<h5 className="text-xl md:text-3xl font-bold text-white">
 					Add custom question
