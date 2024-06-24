@@ -8,6 +8,8 @@ import FormConfirmation from "./StepForms/FormConfirmation";
 
 export default function StepForm() {
   const currentStep = useSelector((store) => store.feedbackForm.currentStep);
+  const expanded = useSelector((store) => store.feedbackForm.expanded);
+
   function renderFormByStep(step) {
     if (step === 0) {
       return <AddStepsForm />;
@@ -17,5 +19,6 @@ export default function StepForm() {
     }
     else return <CustomForm />;
   }
-  return <div>{renderFormByStep(currentStep)}</div>;
+
+  return <div className={`h-screen md:${expanded ? 'w-6/12' : 'w-full'}`}>{renderFormByStep(currentStep)}</div>;
 }

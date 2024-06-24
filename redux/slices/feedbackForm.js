@@ -30,6 +30,7 @@ const initialState = {
     },
   ],
   currentStep: 1,
+  expanded: true,
   formData: {},
 };
 
@@ -39,6 +40,9 @@ const feedbackFormSlice = createSlice({
   reducers: {
     setCurrentStep: (state, action) => {
       state.currentStep = action.payload;
+    },
+    toggleExpanded: (state) => {
+      state.expanded = !state.expanded;
     },
     updateFormData: (state, action) => {
       state.formData = {
@@ -63,6 +67,6 @@ const feedbackFormSlice = createSlice({
   },
 });
 
-export const { setCurrentStep, updateFormData, addSteps, deleteStep } = feedbackFormSlice.actions;
+export const { setCurrentStep, toggleExpanded, updateFormData, addSteps, deleteStep } = feedbackFormSlice.actions;
 
 export default feedbackFormSlice.reducer;

@@ -9,13 +9,11 @@ export default function StudentOnboardingPage() {
   const steps = useSelector((store) => store.feedbackForm.steps);
 
   return (
-    <div>
-      <div className="flex">
-        {/* Steps */}
-        <Steps steps={steps} />
-        {/* Form */}
-        <StepForm />
-      </div>
+    <div className="flex panel-bg">
+      {/* Steps */}
+      <Steps steps={steps} />
+      {/* Form */}
+      <StepForm />
     </div>
   );
 }

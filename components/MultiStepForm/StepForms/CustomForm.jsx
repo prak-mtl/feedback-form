@@ -76,15 +76,15 @@ export default function CustomForm() {
 	], [chosenValue]);
 
 	return (
-		<form className="px-12 py-4" onSubmit={handleSubmit(processData)}>
+		<form className="md:px-12 px-4 py-4" onSubmit={handleSubmit(processData)}>
 			<div className="mb-8">
-				<h5 className="text-xl md:text-3xl font-bold text-white">
-					Personal info
+				<h5 className="lg:text-3xl text-lg font-bold text-white">
+					Mood info
 				</h5>
 				<p className="text-white">Please choose the correct option which reflects your mood for the highlighted question on the left side.</p>
 			</div>
 
-			<div className="flex w-full justify-between">
+			<div className="flex max-md:flex-col flex-row justify-between w-full ">
 				{radioButtonMapping?.map(radioButton => (
 					<RadioButton
 						index={radioButton?.title}

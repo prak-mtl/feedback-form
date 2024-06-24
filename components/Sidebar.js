@@ -5,14 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ClipboardDocumentListIcon, BeakerIcon, ArrowLeftEndOnRectangleIcon, ArrowRightEndOnRectangleIcon, DocumentPlusIcon, TrashIcon } from '@heroicons/react/24/solid';
 
-import { setCurrentStep, deleteStep } from "@/redux/slices/feedbackForm";
+import { setCurrentStep, deleteStep, toggleExpanded } from "@/redux/slices/feedbackForm";
 
 const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
-	const [expanded, setExpanded] = useState(true);
+	const expanded = useSelector((store) => store.feedbackForm.expanded);
 
 	const dispatch = useDispatch();
+
+	const toggleExpandedView = () => {
+		dispatch(toggleExpanded());
+	}
 
 	const handleAddQuestionClick = () => {
 		dispatch(setCurrentStep(0));
@@ -23,7 +27,7 @@ export default function Sidebar({ children }) {
 	}
 
 	return (
-		<aside className="h-screen">
+		<aside className={`h-screen ${expanded ? 'w-6/12' : 'w-min'} z-10`}>
 			<nav className="h-full inline-flex flex-col bg-white border-r shadow-sm">
 				<div className="p-4 pb-2 flex justify-between items-center">
 					{expanded ?
@@ -39,7 +43,7 @@ export default function Sidebar({ children }) {
 						</div>
 						: <div />}
 					<button
-						onClick={() => setExpanded((curr) => !curr)} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+						onClick={toggleExpandedView} className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
 					>
 						{expanded ? <ArrowLeftEndOnRectangleIcon className="size-6 text-blue-500" /> : <ArrowRightEndOnRectangleIcon className="size-6 text-blue-500" />}
 					</button>
