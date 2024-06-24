@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import RadioButton from '../RadioButton';
+import { render } from '@testing-library/react';
+
+import RadioButton from '@/components/FormInputs/RadioButton';
 
 jest.mock('react-redux', () => ({
     ...jest.requireActual('react-redux'),

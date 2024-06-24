@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import NavButtons from '../NavButtons';
+import { render } from '@testing-library/react';
+
+import NavButtons from '@/components/FormInputs/NavButtons';
 
 
 jest.mock('react-redux', () => ({

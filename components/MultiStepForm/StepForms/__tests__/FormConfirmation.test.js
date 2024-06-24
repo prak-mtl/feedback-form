@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import FormConfirmation from '../FormConfirmation';
+import { render, screen } from '@testing-library/react';
+
+import FormConfirmation from '@/components/MultiStepForm/StepForms/FormConfirmation';
 
 // Mock Redux store
 const mockStore = configureStore([]);

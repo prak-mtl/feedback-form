@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { FaceFrownIcon, MinusCircleIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 
-import NavButtons from "../../FormInputs/NavButtons";
-import RadioButton from "../../FormInputs/RadioButton";
+import NavButtons from "@/components/FormInputs/NavButtons";
+import RadioButton from "@/components/FormInputs/RadioButton";
 
-import { setCurrentStep, updateFormData } from "../../../redux/slices/feedbackForm";
+import { setCurrentStep, updateFormData } from "@/redux/slices/feedbackForm";
 
 export default function CustomForm() {
 	const currentStep = useSelector((store) => store.feedbackForm.currentStep);

@@ -1,11 +1,10 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { render, screen } from '@testing-library/react';
 
-import CustomForm from '../StepForms/CustomForm';
-import AddStepsForm from '../StepForms/AddStepsForm';
-import FormConfirmation from '../StepForms/FormConfirmation';
+import CustomForm from '@/components/MultiStepForm/StepForms/CustomForm';
+import AddStepsForm from '@/components/MultiStepForm/StepForms/AddStepsForm';
+import FormConfirmation from '@/components/MultiStepForm/StepForms/FormConfirmation';
 
 // Mock Redux store
 const mockStore = configureStore([]);

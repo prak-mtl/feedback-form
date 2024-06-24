@@ -3,10 +3,10 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
-import TextInput from "../../FormInputs/TextInput";
-import NavButtons from "../../FormInputs/NavButtons";
+import TextInput from "@/components/FormInputs/TextInput";
+import NavButtons from "@/components/FormInputs/NavButtons";
 
-import { setCurrentStep, addSteps } from "../../../redux/slices/feedbackForm";
+import { setCurrentStep, addSteps } from "@/redux/slices/feedbackForm";
 
 export default function AddStepsForm() {
 	const formData = useSelector((store) => store.feedbackForm.formData);

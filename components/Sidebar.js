@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ClipboardDocumentListIcon, BeakerIcon, ArrowLeftEndOnRectangleIcon, ArrowRightEndOnRectangleIcon, DocumentPlusIcon, TrashIcon } from '@heroicons/react/24/solid';
 
-import { setCurrentStep, deleteStep, toggleExpanded } from "../redux/slices/feedbackForm";
+import { setCurrentStep, deleteStep, toggleExpanded } from "@/redux/slices/feedbackForm";
 
 const SidebarContext = createContext();
 

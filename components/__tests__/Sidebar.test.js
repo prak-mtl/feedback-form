@@ -1,11 +1,10 @@
-import React from 'react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import Sidebar, { SidebarItem } from '../Sidebar';
-import { setCurrentStep, deleteStep, toggleExpanded } from '../../redux/slices/feedbackForm';
+import Sidebar, { SidebarItem } from '@/components/Sidebar';
+import { setCurrentStep, deleteStep, toggleExpanded } from '@/redux/slices/feedbackForm';
 
 const mockStore = configureStore([]);
 

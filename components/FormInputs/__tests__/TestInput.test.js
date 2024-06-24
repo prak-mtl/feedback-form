@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TextInput from '../TextInput';
+import { render } from '@testing-library/react';
+
+import TextInput from '@/components/FormInputs/TextInput';
 
 describe('TextInput', () => {
 

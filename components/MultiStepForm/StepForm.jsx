@@ -2,9 +2,9 @@
 
 import { useSelector } from "react-redux";
 
-import CustomForm from "./StepForms/CustomForm";
-import AddStepsForm from "./StepForms/AddStepsForm";
-import FormConfirmation from "./StepForms/FormConfirmation";
+import CustomForm from "@/components/MultiStepForm/StepForms/CustomForm";
+import AddStepsForm from "@/components/MultiStepForm/StepForms/AddStepsForm";
+import FormConfirmation from "@/components/MultiStepForm/StepForms/FormConfirmation";
 
 export default function StepForm() {
   const currentStep = useSelector((store) => store.feedbackForm.currentStep);

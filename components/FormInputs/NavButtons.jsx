@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
-import { setCurrentStep } from "../../redux/slices/feedbackForm";
+import { setCurrentStep } from "@/redux/slices/feedbackForm";
 
 export default function NavButtons() {
   const currentStep = useSelector((store) => store.feedbackForm.currentStep);
