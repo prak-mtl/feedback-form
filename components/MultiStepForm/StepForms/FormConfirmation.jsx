@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 export default function FormConfirmation() {
   const formData = useSelector((store) => store.feedbackForm.formData);
+  const steps = useSelector((store) => store.feedbackForm.steps);
 
   async function processData(data) {
     console.log(formData);
@@ -16,10 +17,13 @@ export default function FormConfirmation() {
           </h5>
           <p className="text-white">Confirm if this is the Data that you have filled</p>
         </div>
-        <div className="grid gap-2 sm:grid-cols-2 text-white">
-          <code>
-            <pre>{JSON.stringify(formData, null, 2)}</pre>
-          </code>
+        <div className="text-white">
+          {steps?.map(step =>
+            <div className="flex mb-3">
+              <h5>{step.title}</h5>
+              <b>&nbsp; {String(formData[step.number]?.mood || "").toUpperCase()}</b>
+            </div>
+          )}
         </div>
       </form>
     </div>
